@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Disable text selection and right-click (copy) functionality across the entire page
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.userSelect = "none"; // Disable text selection
+            document.addEventListener("contextmenu", function (event) {
+                event.preventDefault(); // Disable right-click menu (copy)
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div id="turn"></div> <!-- Turn notification -->
+        <div id="board">
+            <!-- Game cells will be generated dynamically -->
+        </div>
+        <div id="result"></div>
+        <button id="reset">Reset Game</button>
+        <button id="toggle-sound">🔊</button> <!-- Toggle sound -->
+        <button id="toggle-theme">🌙</button> <!-- Toggle theme -->
+        <p id="author">Made by Soumyadip</p>
+        <div>Player X Score: <span id="playerXScore">0</span></div>
+        <div>Player O Score: <span id="playerOScore">0</span></div>
+        <div>Draws: <span id="draws">0</span></div>
+    </div>
+
+    <!-- Player Name Input Popup -->
+    <div id="playerNamesPopup" class="popup">
+        <div class="popup-content">
+            <h2>Enter Player Names</h2>
+            <label for="playerXName">Player X Name:</label>
+            <input type="text" id="playerXName" placeholder="Enter Player X's name" maxlength="15">
+            <label for="playerOName">Player O Name:</label>
+            <input type="text" id="playerOName" placeholder="Enter Player O's name" maxlength="15">
+            <button id="startGame">Start Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #db20ecee, #4082fc);
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 87, 87, 0.493);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#turn {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 0 auto 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#reset {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #00a2ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#reset:hover {
+    background: #d63031;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#author {
+    font-size: 16px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, red, green, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rgb-effect 3s infinite linear;
+    transition: transform 0.3s ease;
+    /* Smooth zoom effect */
+}
+
+#author:hover {
+    transform: scale(1.2);
+    /* Zoom effect */
+}
+
+@keyframes rgb-effect {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Dark Theme Styles */
+.dark-theme {
+    background: #2c3e50;
+    color: white;
+}
+
+.dark-theme .container {
+    background: rgba(255, 87, 87, 0.8);
+}
+
+.dark-theme .cell {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+}
+
+.dark-theme #reset {
+    background: #3498db;
+}
+
+.dark-theme #toggle-sound,
+.dark-theme #toggle-theme {
+    background: #34495e;
+    color: white;
+}
+
+.dark-theme #toggle-sound:hover,
+.dark-theme #toggle-theme:hover {
+    background: #1abc9c;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    /* Adjust height automatically based on content */
+    background-color: rgba(240, 232, 232, 0);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    /* Center the popup */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    /* Make sure the content width is responsive */
+    max-width: 350px;
+    /* Limit the max width */
+}
+
+.popup input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 90%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background: #00a2ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+    /* Add a gap between the inputs and the button */
+}
+
+.popup button:hover {
+    background: #d63031;
+}
